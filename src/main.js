@@ -37,6 +37,10 @@ function draw() {
   "use strict";
   clear();
   game.drawGrid();
-  game.player.draw();
   game.treasure.draw();
+  game.player.draw();
+
+  if (game.player.col === game.treasure.col && game.player.row === game.treasure.row) {
+    game.treasure.setRandomPosition();
+  }
 }

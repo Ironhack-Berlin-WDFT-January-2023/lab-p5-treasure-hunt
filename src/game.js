@@ -63,6 +63,11 @@ class Treasure {
     this.image;
   }
 
+  setRandomPosition() {
+    this.row = Math.floor(Math.random() * CELLS);
+    this.col = Math.floor(Math.random() * CELLS);
+  }
+
   draw() {
     image(this.image, this.col * SQUARE_SIDE, this.row * SQUARE_SIDE, SQUARE_SIDE, SQUARE_SIDE);
   }
