@@ -70,5 +70,7 @@ class Treasure {
 
   draw() {
     image(this.image, this.col * SQUARE_SIDE, this.row * SQUARE_SIDE, SQUARE_SIDE, SQUARE_SIDE);
+    fill(255, 160, 122, 100);
+    rect(this.col * SQUARE_SIDE, this.row * SQUARE_SIDE, SQUARE_SIDE, SQUARE_SIDE);
   }
 }
