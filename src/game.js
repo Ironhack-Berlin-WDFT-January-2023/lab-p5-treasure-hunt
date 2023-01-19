@@ -1,14 +1,17 @@
 class Game {
   constructor() {
     this.player = new Player()
+    this.treasure = new Treasure()
   }
 
   preload() {
     this.player.image = loadImage("../assets/character-down.png")
+    this.treasure.image = loadImage("../assets/treasure.png")
   }
   
   draw() {
     this.player.draw()
+    this.treasure.draw()
 }
 
   drawGrid() {
@@ -68,4 +71,22 @@ moveUp() {
 moveDown() {
     this.row += SQUARE_SIDE
 }
+}
+
+class Treasure {
+  constructor(){
+    this.col = 0
+    this.row = 0
+  }
+
+  setRandomPosition() {
+    this.col = Math.floor(Math.random() * 1000);
+    this.row = Math.floor(Math.random() * 1000);
+  }
+ 
+
+  draw() {
+    image(this.image, this.col, this.row, SQUARE_SIDE, SQUARE_SIDE)
+  }
+
 }
