@@ -3,6 +3,7 @@ const game = new Game();
 function preload() {
   console.log("preload");
   player.preload();
+  treasure.preload();
 }
 
 function setup() {
@@ -14,4 +15,5 @@ function setup() {
 function draw() {
   game.drawGrid();
   player.draw();
+  treasure.drawTreasure();
 }
