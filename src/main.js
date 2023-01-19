@@ -5,15 +5,19 @@ function keyPressed() {
   switch (keyCode) {
     case UP_ARROW:
       game.player.moveUp();
+      game.player.image = loadImage("../assets/character-up.png");
       break;
     case DOWN_ARROW:
       game.player.moveDown();
+      game.player.image = loadImage("../assets/character-down.png");
       break;
     case LEFT_ARROW:
       game.player.moveLeft();
+      game.player.image = loadImage("../assets/character-left.png");
       break;
     case RIGHT_ARROW:
       game.player.moveRight();
+      game.player.image = loadImage("../assets/character-right.png");
       break;
   }
 }
