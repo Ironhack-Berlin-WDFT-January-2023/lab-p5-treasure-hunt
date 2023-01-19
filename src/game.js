@@ -7,6 +7,10 @@ class Game {
     this.player.image = loadImage("../assets/character-down.png")
   }
   
+  draw() {
+    this.player.draw()
+}
+
   drawGrid() {
     stroke ("darkgrey")
     strokeWeight(2)
@@ -36,8 +40,7 @@ class Game {
     line(800, 0, 800, 1000)
     line(900, 0, 900, 1000)
   }
-
-
+  
 
 }
 
@@ -45,26 +48,24 @@ class Player {
   constructor() {
     this.col = 0
     this.row = 0
-    this.image = 0
-  }
-  moveUp(){
-    this.row -=1
-  }
-
-  moveDown(){
-    this.row +=1
+    this.image
   }
   
-  moveRight(){
-    this.col +=1
-  }
-
-  moveLeft(){
-    this.col -=1
-  }
 
 draw () {
-  image(this.image, this.col, this.row, SQUARE_SIDE, SQUARE_SIDE)
+  image(this.image, this.col, this.row, SQUARE_SIDE, SQUARE_SIDE);
 }
 
+moveRight() {
+    this.col += SQUARE_SIDE
+}
+moveLeft() {
+    this.col -= SQUARE_SIDE
+}
+moveUp() {
+    this.row -= SQUARE_SIDE
+}
+moveDown() {
+    this.row += SQUARE_SIDE
+}
 }
