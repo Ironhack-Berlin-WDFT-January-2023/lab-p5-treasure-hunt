@@ -75,18 +75,19 @@ moveDown() {
 
 class Treasure {
   constructor(){
-    this.col = 0
-    this.row = 0
+    this.col = Math.floor(Math.random() * 10);
+    this.row = Math.floor(Math.random() * 10);
+    this.image
   }
 
   setRandomPosition() {
-    this.col = Math.floor(Math.random() * 1000);
-    this.row = Math.floor(Math.random() * 1000);
+    this.col = Math.floor(Math.random() * 10);
+    this.row = Math.floor(Math.random() * 10);
   }
  
 
   draw() {
-    image(this.image, this.col, this.row, SQUARE_SIDE, SQUARE_SIDE)
+    image(this.image, this.col * SQUARE_SIDE, this.row * SQUARE_SIDE, SQUARE_SIDE, SQUARE_SIDE)
   }
 
 }
