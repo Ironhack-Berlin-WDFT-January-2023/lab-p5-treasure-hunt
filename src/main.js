@@ -1,7 +1,9 @@
 const game = new Game();
 
+
 function preload() {
-  console.log("preload")
+  game.preload()
+  
 
 }
 function setup() {
@@ -13,5 +15,6 @@ function setup() {
 
 function draw() {
   game.drawGrid();
+  game.player.draw();
 
 }

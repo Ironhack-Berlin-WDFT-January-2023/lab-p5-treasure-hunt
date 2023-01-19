@@ -1,4 +1,12 @@
 class Game {
+  constructor() {
+    this.player = new Player()
+  }
+
+  preload() {
+    this.player.image = loadImage("../assets/character-down.png")
+  }
+  
   drawGrid() {
     stroke ("darkgrey")
     strokeWeight(2)
@@ -28,12 +36,16 @@ class Game {
     line(800, 0, 800, 1000)
     line(900, 0, 900, 1000)
   }
+
+
+
 }
 
 class Player {
   constructor() {
     this.col = 0
     this.row = 0
+    this.image = 0
   }
   moveUp(){
     this.row -=1
@@ -51,12 +63,8 @@ class Player {
     this.col -=1
   }
 
-
-
+draw () {
+  image(this.image, this.col, this.row, SQUARE_SIDE, SQUARE_SIDE)
 }
 
-const player = new Player(0,0) // (0,0) = Initial position (col, row)
-player.moveDown() // Increase by 1 the value of player.row
-player.moveDown() // Increase by 1 the value of player.row
-player.moveRight() // Increase by 1 the value of player.col
-console.log(player.col, player.row) // => 1,2
+}
