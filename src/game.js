@@ -58,9 +58,11 @@ class Player {
 
 class Treasure {
   constructor() {
-    this.row = Math.floor(Math.random() * CELLS);
-    this.col = Math.floor(Math.random() * CELLS);
+    this.row;
+    this.col;
     this.image;
+
+    this.setRandomPosition();
   }
 
   setRandomPosition() {
